@@ -3,6 +3,8 @@ import { Label, Input, Button } from './Form.styled';
 import { Box } from '../Box/Box';
 import { nanoid } from 'nanoid'
 import PropTypes from 'prop-types';
+import { Formik } from "formik";
+// import * as yup from 'yup';
 
 export class Form extends Component {
   state = {
@@ -31,7 +33,10 @@ export class Form extends Component {
 
   render() {
     return (
-      <Box as='form' onSubmit={this.onSubmitForm} display='flex' flexDirection='column' maxWidth={500} mx='auto'>
+      <Formik
+        initialValues={this.state}
+      >
+      <Box as = 'form' onSubmit={this.onSubmitForm} display='flex' flexDirection='column' maxWidth={500} mx='auto'>
         <Label htmlFor={this.nameInputId}>
           Name
           <Input
@@ -61,7 +66,8 @@ export class Form extends Component {
           />
         </Label>
         <Button type="submit">Add contact</Button>
-      </Box>
+        </Box>
+        </Formik>
     );
   }
 }
