@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Form } from './Form/Form';
+import { FormContacts } from './Form/Form';
 import { Filter } from './Filter/Filter';
 import { List } from './List/List';
 import { Box } from './Box/Box';
@@ -60,7 +60,7 @@ export class App extends Component {
     return (
       <Box mx='auto' maxWidth={500} >
         <h2>Phonebook</h2>
-        <Form onSubmit={this.addContact} />
+        <FormContacts onSubmit={this.addContact} />
         <h2>Contacts</h2>
         <Filter onChange={this.filterContact} value={filter} />
         <List contacts={visibleContact}
