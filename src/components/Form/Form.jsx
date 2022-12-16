@@ -4,6 +4,7 @@ import { Box } from '../Box/Box';
 import { nanoid } from 'nanoid'
 import { Formik, Form, ErrorMessage } from "formik";
 import * as yup from 'yup';
+import PropTypes from 'prop-types';
 
 
 const schema = yup.object().shape({
@@ -78,6 +79,10 @@ export class FormContacts extends Component {
     );
   }
 }
+
+FormContacts.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 
 
